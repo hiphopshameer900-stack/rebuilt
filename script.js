@@ -62,3 +62,21 @@ document.getElementById("start-button").addEventListener("click", () => {
     alert("Magical door unlocking... Preparing Scene 2!");
     // Here we will eventually trigger the zoom animation and switch to Scene 2
 });
+// 4. Click Heart Action (Triggers Zoom & Switches to Scene 2)
+document.getElementById("start-button").addEventListener("click", () => {
+    const heart = document.getElementById("start-button");
+    
+    // Add a quick zoom effect to the heart
+    heart.style.transform = "scale(5)";
+    heart.style.opacity = "0";
+    heart.style.transition = "all 1s ease";
+
+    setTimeout(() => {
+        switchScene("scene-1", "scene-2");
+    }, 1000);
+});
+
+// Temporary listener for Scene 3 button until we build it
+document.getElementById("to-scene3").addEventListener("click", () => {
+    alert("Heading to Scene 3 next!");
+});
